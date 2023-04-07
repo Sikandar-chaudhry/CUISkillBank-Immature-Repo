@@ -1,65 +1,42 @@
 
 import java.util.Scanner;
 public class CUISkillBank{
+
+    private static final int MAXIMUM_VOLUNTEERS=100;
+
+    private static final Volunteer[] volunteers=new Volunteer[MAXIMUM_VOLUNTEERS];
+    private static int numberOfVolunteers=0;
     public static void main(String[] args) {
 
         Scanner input=new Scanner(System.in);
+            Volunteer v1=new Volunteer();
+            MembershipRegistration m1=new MembershipRegistration();
+        while (true){
 
-        String nameVolunteer;
-        String emailVolunteer;
-        String passwordVolunteer;
-        String phoneNumberVolunteer;
-        Volunteer[] v1;
+            System.out.println("Welcome to CUI Skill Bank! ");
+            System.out.println("Please select an option : ");
+            System.out.println("1. Register as a Volunteer ");
+            System.out.println("2. Login as a Volunteer ");
+            System.out.println("3. Login as an admin");
+            System.out.println("4. Exit");
 
+            int choice=input.nextInt();
 
-        MembershipRegistration m1=new MembershipRegistration();
-        int memberOrNot;
-        System.out.println("-> Press 1 if you are already on CUI Skill Bank : ");
-        System.out.println("-> Press 2 to register yourself on CUI Skill Bank : ");
-        memberOrNot= input.nextInt();
-        switch(memberOrNot){
-            case 1: {
-                System.out.println();
-                break;
-            }
-            case 2:{
+            switch (choice){
 
-                    v1=new Volunteer[5];
-                for(int i=0; i<5; i++ ) {
-                 //   System.out.println("Membership Number: " + MembershipRegistration.counter);
-                    input.nextLine();
-                    System.out.println("Enter Name : ");
-                    nameVolunteer = input.nextLine();
-                  //  v1[i].setVolunteerName(nameVolunteer);
-                    System.out.println("Enter Email : ");
-                    emailVolunteer = input.nextLine();
-                  // v1[i].setVolunteerEmail(emailVolunteer);
-                    System.out.println("Enter Password : ");
-                    passwordVolunteer = input.nextLine();
-                  //  v1[i].setVolunteerPassword(passwordVolunteer);
-                    System.out.println("Enter Mobile Phone : ");
-                    phoneNumberVolunteer = input.nextLine();
-                  //  v1[i].setVolunteerPhoneNumber(phoneNumberVolunteer);
-                    //m1.registerStudents(v1[i]);
-                    v1[i]=new Volunteer(nameVolunteer,emailVolunteer,passwordVolunteer,phoneNumberVolunteer);
+                case 1:
+                    m1.registerStudents(input);
 
-                }
-                System.out.println(v1[0]);
+                    break;
+                case 4:
+                    System.out.println("Exiting");
+                    return;
 
-                break;
-            }
-            default: {
-                break;
             }
 
         }
 
-        //MembershipRegistration m1=new MembershipRegistration();
 
-
-
-
-
+        }
 
     }
-}

@@ -1,6 +1,10 @@
+import java.util.Scanner;
+
+
+
 public class Volunteer {
 
-
+    Scanner scan=new Scanner(System.in);
     private String volunteerName;
     private String volunteerEmail;
     private String volunteerPassword;
@@ -50,10 +54,11 @@ public class Volunteer {
 
 
     public String toString() {
-        return
-                "Name= " + volunteerName +
-                "\nEmail= " + volunteerEmail +
-                "\nPassword= " + volunteerPassword +
-                "\nPhoneNumber=" + volunteerPhoneNumber ;
+        return "----------------------------------------------------------------------------------------------------"+
+               "\n| Name= " + volunteerName +"                                                                                     |"+
+               "\n| Email= " + volunteerEmail +"                                                                                   |"+
+               "\n| Password= " + volunteerPassword +"                                                                             |"+
+               "\n| PhoneNumber= " + volunteerPhoneNumber+"                                                                        |"+
+               "\n-----------------------------------------------------------------------------------------------------";
     }
 }

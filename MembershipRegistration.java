@@ -1,33 +1,46 @@
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Arrays;
+import java.util.Scanner;
 
-public class MembershipRegistration extends Volunteer{
+public class MembershipRegistration extends Volunteer {
 
-    static int counter=0;
+    Scanner scan=new Scanner(System.in);
+    String nameVolunteer;
+    String emailVolunteer;
+    String passwordVolunteer;
+    String phoneNumberVolunteer;
+    Volunteer volunteers = new Volunteer();
+    static int counter = 0;
+
+    public MembershipRegistration(String volunteerName, String volunteerEmail, String volunteerPassword, String volunteerPhoneNumber, String nameVolunteer, String emailVolunteer, String passwordVolunteer, String phoneNumberVolunteer) {
+        super(volunteerName, volunteerEmail, volunteerPassword, volunteerPhoneNumber);
+        this.nameVolunteer = nameVolunteer;
+        this.emailVolunteer = emailVolunteer;
+        this.passwordVolunteer = passwordVolunteer;
+        this.phoneNumberVolunteer = phoneNumberVolunteer;
+    }
+
+        public void registerStudents(@NotNull Scanner scanner){
+            scanner.nextLine();
+            System.out.println("Enter Name : ");
+            volunteers.setVolunteerName(scanner.nextLine());
+
+            System.out.println("Enter Email : ");
+            volunteers.setVolunteerEmail(scanner.nextLine());
+
+            System.out.println("Enter Password : ");
+            volunteers.setVolunteerPassword(scanner.nextLine());
+
+            System.out.println("Enter Mobile Phone : ");
+            volunteers.setVolunteerPhoneNumber(scanner.nextLine());
+
+            volunteers = new Volunteer(nameVolunteer, emailVolunteer, passwordVolunteer, phoneNumberVolunteer);
+     }
+
     public MembershipRegistration() {
     }
-
-    public Volunteer[] getVolunteers() {
-        return volunteers;
-    }
-
-    public void setVolunteers(Volunteer[] volunteers) {
-        this.volunteers = volunteers;
-    }
-
-    Volunteer volunteers[];
-    public MembershipRegistration(String volunteerName, String volunteerEmail, String volunteerPassword, String volunteerPhoneNumber) {
-        super(volunteerName, volunteerEmail, volunteerPassword, volunteerPhoneNumber);
-    }
-    public void registerStudents(Volunteer volunteer){
-        volunteers=new Volunteer[5];
-        for (int i=0; i<volunteers.length; i++){
-            volunteers[i]=new Volunteer(volunteer.getVolunteerName(),volunteer.getVolunteerEmail(),volunteer.getVolunteerPassword(),volunteer.getVolunteerPhoneNumber());
-        counter++;
-        }
-    }
-
-
-    public String toString() {
-        return "Volunteer=" + Arrays.toString(volunteers) ;
-    }
 }
+
+
+
