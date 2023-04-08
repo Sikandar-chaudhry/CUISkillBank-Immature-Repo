@@ -52,7 +52,6 @@ public class Volunteer {
         this.volunteerPhoneNumber = volunteerPhoneNumber;
     }
 
-
     public String toString() {
         return "----------------------------------------------------------------------------------------------------"+
                "\n| Name= " + volunteerName +"                                                                                     |"+

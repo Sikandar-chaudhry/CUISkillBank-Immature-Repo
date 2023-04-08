@@ -10,6 +10,7 @@ public class CUISkillBank{
 
         Scanner input=new Scanner(System.in);
             Volunteer v1=new Volunteer();
+
             MembershipRegistration m1=new MembershipRegistration();
         while (true){
 
@@ -25,9 +26,9 @@ public class CUISkillBank{
             switch (choice){
 
                 case 1:
-                    m1.registerStudents(input);
-
-                    break;
+                    m1.registerStudents(input,MAXIMUM_VOLUNTEERS);
+                    continue;
+                    //break;
                 case 4:
                     System.out.println("Exiting");
                     return;
