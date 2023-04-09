@@ -1,63 +1,120 @@
-import java.util.Scanner;
+package FA22BCS008;
 
+ class Volunteer {
 
+        private String name;
+        private String email;
+        private String password;
+        private String mobileNumber;
+        private String skillToOffer;
+        private String noteSection1;
+        private String dateAndTimeSection1;
 
-public class Volunteer {
+        private String skillToNeed;
+        private String noteSection2;
+        private String dateAndTimeSection2;
 
-    Scanner scan=new Scanner(System.in);
-    private String volunteerName;
-    private String volunteerEmail;
-    private String volunteerPassword;
-    private String volunteerPhoneNumber;
+        public Volunteer(String name, String email, String password, String mobileNumber, String skillToOffer, String note1, String dateAndTime1,String skillToNeed,String noteSection2,String dateAndTimeSection2) {
+            this.name = name;
+            this.email = email;
+            this.password = password;
+            this.mobileNumber = mobileNumber;
+            this.skillToOffer = skillToOffer;
+            this.noteSection1 = note1;
+            this.dateAndTimeSection1= dateAndTime1;
+            this.skillToNeed = skillToNeed;
+            this.noteSection2 = noteSection2;
+            this.dateAndTimeSection2 = dateAndTimeSection2;
+        }
 
-    public Volunteer() {
-    }
+        public String getName() {
+            return name;
+        }
 
-    public Volunteer(String volunteerName, String volunteerEmail, String volunteerPassword, String volunteerPhoneNumber) {
-        this.volunteerName = volunteerName;
-        this.volunteerEmail = volunteerEmail;
-        this.volunteerPassword = volunteerPassword;
-        this.volunteerPhoneNumber = volunteerPhoneNumber;
-    }
+        public void setName(String name) {
+            this.name = name;
+        }
 
-    public String getVolunteerName() {
-        return volunteerName;
-    }
+        public String getEmail() {
+            return email;
+        }
 
-    public void setVolunteerName(String volunteerName) {
-        this.volunteerName = volunteerName;
-    }
+        public void setEmail(String email) {
+            this.email = email;
+        }
 
-    public String getVolunteerEmail() {
-        return volunteerEmail;
-    }
+        public String getPassword() {
+            return password;
+        }
 
-    public void setVolunteerEmail(String volunteerEmail) {
-        this.volunteerEmail = volunteerEmail;
-    }
+        public void setPassword(String password) {
+            this.password = password;
+        }
 
-    public String getVolunteerPassword() {
-        return volunteerPassword;
-    }
+        public String getMobileNumber() {
+            return mobileNumber;
+        }
 
-    public void setVolunteerPassword(String volunteerPassword) {
-        this.volunteerPassword = volunteerPassword;
-    }
+        public void setMobileNumber(String mobileNumber) {
+            this.mobileNumber = mobileNumber;
+        }
 
-    public String getVolunteerPhoneNumber() {
-        return volunteerPhoneNumber;
-    }
+        public String getSkillToOffer() {
+            return skillToOffer;
+        }
 
-    public void setVolunteerPhoneNumber(String volunteerPhoneNumber) {
-        this.volunteerPhoneNumber = volunteerPhoneNumber;
-    }
+        public void setSkillToOffer(String skillToOffer) {
+            this.skillToOffer = skillToOffer;
+        }
 
-    public String toString() {
-        return "----------------------------------------------------------------------------------------------------"+
-               "\n| Name= " + volunteerName +"                                                                                     |"+
-               "\n| Email= " + volunteerEmail +"                                                                                   |"+
-               "\n| Password= " + volunteerPassword +"                                                                             |"+
-               "\n| PhoneNumber= " + volunteerPhoneNumber+"                                                                        |"+
-               "\n-----------------------------------------------------------------------------------------------------";
-    }
-}
+        public String getNoteSection1() {
+         return noteSection1;
+        }
+
+        public void setNoteSection1(String noteSection1) {
+         this.noteSection1 = noteSection1;
+        }
+
+        public String getDateAndTimeSection1() {
+         return dateAndTimeSection1;
+        }
+
+        public void setDateAndTimeSection1(String dateAndTimeSection1) {
+         this.dateAndTimeSection1 = dateAndTimeSection1;
+        }
+
+        public String getSkillToNeed() {
+         return skillToNeed;
+        }
+
+        public void setSkillToNeed(String skillToNeed) {
+         this.skillToNeed = skillToNeed;
+        }
+
+        public String getNoteSection2() {
+         return noteSection2;
+        }
+
+        public void setNoteSection2(String noteSection2) {
+         this.noteSection2 = noteSection2;
+        }
+
+        public String getDateAndTimeSection2() {
+         return dateAndTimeSection2;
+        }
+
+        public void setDateAndTimeSection2(String dateAndTimeSection2) {
+         this.dateAndTimeSection2 = dateAndTimeSection2;
+        }
+
+     @Override
+     public String toString() {
+         return "Name = " + name+
+                 " Email = " + email+
+                 " Password = " + password +
+                 " Phone Number = " + mobileNumber +
+                 " Skill To Offer = " + skillToOffer +
+                 " Note = " + noteSection1 +
+                 " Date and Time = " + dateAndTimeSection1;
+     }
+ }

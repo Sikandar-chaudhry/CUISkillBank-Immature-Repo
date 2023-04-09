@@ -1,18 +1,20 @@
+package FA22BCS008;
 
 import java.util.Scanner;
-public class CUISkillBank{
 
-    private static final int MAXIMUM_VOLUNTEERS=100;
+public class CUISkillBank {
 
-    private static final Volunteer[] volunteers=new Volunteer[MAXIMUM_VOLUNTEERS];
-    private static int numberOfVolunteers=0;
+    static final int MAXIMUM_VOLUNTEERS=100;
     public static void main(String[] args) {
 
-        Scanner input=new Scanner(System.in);
-            Volunteer v1=new Volunteer();
+        Scanner input = new Scanner(System.in);
 
-            MembershipRegistration m1=new MembershipRegistration();
-        while (true){
+        Volunteer[] volunteers = new Volunteer[100];
+        int numberOfVolunteers = 0;
+        MembershipRegistration memberLogin=new MembershipRegistration();
+
+        boolean running = true;
+        while (running) {
 
             System.out.println("Welcome to CUI Skill Bank! ");
             System.out.println("Please select an option : ");
@@ -21,23 +23,33 @@ public class CUISkillBank{
             System.out.println("3. Login as an admin");
             System.out.println("4. Exit");
 
-            int choice=input.nextInt();
+            int choice = input.nextInt();
 
-            switch (choice){
+            switch (choice) {
 
                 case 1:
-                    m1.registerStudents(input,MAXIMUM_VOLUNTEERS);
-                    continue;
-                    //break;
+                    input.nextLine();
+                    MembershipRegistration.getVolunteer(MAXIMUM_VOLUNTEERS);
+                    //MembershipRegistration.printVolunteer();
+                    break;
+                case 2:
+                    input.nextLine();
+                    MembershipRegistration.searchVolunteer();
+                    MembershipRegistration.editVolunteer();
+                    break;
+
                 case 4:
+                    running = false;
                     System.out.println("Exiting");
-                    return;
+                    break;
 
+                default:
+                    System.out.println("Enter Valid Choice ");
+                    break;
             }
-
         }
 
-
-        }
+        input.close();
 
     }
+}
