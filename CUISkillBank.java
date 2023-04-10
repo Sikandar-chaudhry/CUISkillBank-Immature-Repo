@@ -16,7 +16,6 @@ public class CUISkillBank {
         LocalCommunities localCommunities=new LocalCommunities();
         ChatBox chatFeature=new ChatBox();
         Director director=new Director();
-        ArrayList<Volunteer> volunteers1 = MembershipRegistration.getVolunteer(MAXIMUM_VOLUNTEERS);
 
         boolean running = true;
         while (running) {
@@ -100,9 +99,12 @@ public class CUISkillBank {
                     int selectAdminOption=input.nextInt();
                     switch (selectAdminOption) {
                         case 1:
+                            MembershipRegistration.MatchUp();
                             break;
                         case 2:
+                            ArrayList<Volunteer> volunteers1 = MembershipRegistration.getVolunteer(0);
                             Director.printSkills(volunteers1);
+                            break;
                         case 3:
                             int chooseChatFeature1;
                             System.out.println("Select an Option :");

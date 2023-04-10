@@ -14,6 +14,8 @@ package FA22BCS008;
         private String noteSection2;
         private String dateAndTimeSection2;
 
+        private String matchedUpSkill;
+
         public Volunteer(String name, String email, String password, String mobileNumber, String skillToOffer, String note1, String dateAndTime1,String skillToNeed,String noteSection2,String dateAndTimeSection2) {
             this.name = name;
             this.email = email;
@@ -25,7 +27,6 @@ package FA22BCS008;
             this.skillToNeed = skillToNeed;
             this.noteSection2 = noteSection2;
             this.dateAndTimeSection2 = dateAndTimeSection2;
-
         }
 
         public String getName() {
@@ -107,6 +108,14 @@ package FA22BCS008;
         public void setDateAndTimeSection2(String dateAndTimeSection2) {
          this.dateAndTimeSection2 = dateAndTimeSection2;
         }
+
+     public String getMatchedUpSkill() {
+         return matchedUpSkill;
+     }
+
+     public void setMatchedUpSkill(String matchedUpSkill) {
+         this.matchedUpSkill = matchedUpSkill;
+     }
 
      @Override
      public String toString() {

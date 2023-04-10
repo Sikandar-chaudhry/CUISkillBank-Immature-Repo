@@ -8,7 +8,6 @@ public class MembershipRegistration {
     static Scanner scan = new Scanner(System.in);
 
     static ArrayList<Volunteer> volunteers = new ArrayList<>();
-
     public static ArrayList<Volunteer> getVolunteer(int maxVolunteers) {
 
         int numVolunteers = 0;
@@ -42,6 +41,9 @@ public class MembershipRegistration {
 
             System.out.println("Date And Time : ");
             String dateAndTimeSection2=scan.nextLine();
+
+
+
 
             Volunteer volunteer = new Volunteer(name, email, password, mobileNumber, skillToOffer, noteInSection1, dateAndTime,skillToNeed,noteSection2,dateAndTimeSection2);
 
@@ -169,6 +171,20 @@ public class MembershipRegistration {
                 break;
             } else {
                 System.out.println("Invalid input, please try again.");
+            }
+        }
+    }
+    public static void MatchUp(){
+
+        for (Volunteer volunteer: volunteers){
+            if (volunteer.getSkillToOffer().equals(volunteer.getSkillToNeed())){
+                System.out.println("Volunteer Name : "+volunteer.getName());
+                System.out.println("Volunteer Email : "+volunteer.getEmail());
+                System.out.println("Volunteer Phone Number : "+volunteer.getMobileNumber());
+                System.out.println("Skills Matched : "+volunteer.getSkillToOffer());
+            }
+            else {
+                System.out.println("No skill matched.");
             }
         }
     }
