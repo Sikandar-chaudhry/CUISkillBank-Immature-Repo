@@ -1,5 +1,6 @@
 package FA22BCS008;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CUISkillBank {
@@ -14,6 +15,8 @@ public class CUISkillBank {
         MembershipRegistration memberLogin=new MembershipRegistration();
         LocalCommunities localCommunities=new LocalCommunities();
         ChatBox chatFeature=new ChatBox();
+        Director director=new Director();
+        ArrayList<Volunteer> volunteers1 = MembershipRegistration.getVolunteer(MAXIMUM_VOLUNTEERS);
 
         boolean running = true;
         while (running) {
@@ -91,20 +94,15 @@ public class CUISkillBank {
                 case 3:
                     System.out.println("\nPlease select an option : ");
                     System.out.println("1. MatchUp Skills : ");
-                    System.out.println("2. Community Activites");
+                    System.out.println("2. Director ");
                     System.out.println("3. Open Chatbox");
+                    System.out.println("4. Community Activities");
                     int selectAdminOption=input.nextInt();
                     switch (selectAdminOption) {
                         case 1:
                             break;
                         case 2:
-                            if (localCommunities.getNameOfCommunity() != null) {
-                                System.out.println(localCommunities);
-                            } else {
-                                System.out.println("\nCommunity Tab is empty right now. Check back later!");
-                            }
-                            break;
-
+                            Director.printSkills(volunteers1);
                         case 3:
                             int chooseChatFeature1;
                             System.out.println("Select an Option :");
@@ -124,9 +122,16 @@ public class CUISkillBank {
                                         System.out.println("No message for Admin from Volunteer. Check later!");
                                     }
                                     break;
-                                default:
-                                    System.out.println("Select valid option");
-                                    break;
+                            case 4:
+                                if (localCommunities.getNameOfCommunity() != null) {
+                                System.out.println(localCommunities);
+                                } else {
+                                System.out.println("\nCommunity Tab is empty right now. Check back later!");
+                                }
+                                break;
+                            default:
+                                System.out.println("Select valid option");
+                                break;
                             }
 
                             break;

@@ -163,6 +163,7 @@ public class MembershipRegistration {
                         break;
                     } else {
                         System.out.println("Invalid input, please try again.");
+                        break;
                     }
                 }
                 break;
