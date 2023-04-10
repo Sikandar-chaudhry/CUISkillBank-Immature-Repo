@@ -109,7 +109,7 @@ public class MembershipRegistration {
 
         System.out.println("Enter Email : ");
         String email = scan.nextLine();
-        System.out.println("Enter PAssword : ");
+        System.out.println("Enter Password : ");
         String pass = scan.nextLine();
         boolean found = false;
         for (Volunteer volunteer : volunteers) {
@@ -127,4 +127,49 @@ public class MembershipRegistration {
             System.out.println("No volunteer found with this email or Incorrect Password");
         }
     }
+    public static void saveVolunteer() {
+        System.out.println("Press 'Save' to save the registration or 'Cancel' to cancel the registration:");
+
+        while (true) {
+            String input = scan.nextLine();
+            if (input.equalsIgnoreCase("Save")) {
+                boolean hasEmptyFields = false;
+                for (Volunteer volunteer : volunteers) {
+                    if (volunteer.getName().isEmpty() || volunteer.getEmail().isEmpty() ||
+                            volunteer.getPassword().isEmpty() || volunteer.getMobileNumber().isEmpty() ||
+                            volunteer.getSkillToOffer().isEmpty() || volunteer.getNoteSection1().isEmpty() ||
+                            volunteer.getDateAndTimeSection1().isEmpty() || volunteer.getSkillToNeed().isEmpty() ||
+                            volunteer.getNoteSection2().isEmpty() || volunteer.getDateAndTimeSection2().isEmpty()) {
+
+                        System.out.println("The form contains empty fields, please fill in all fields before submitting.");
+                        System.out.println(volunteer);
+                        hasEmptyFields = true;
+                        break;
+                    }
+                }
+                if (!hasEmptyFields) {
+                    System.out.println("Registration saved successfully!");
+                    break;
+                }
+            } else if (input.equalsIgnoreCase("Cancel")) {
+                System.out.println("Are you sure you want to cancel your registration? Press 'Yes' to cancel or 'No' to go back.");
+                while (true) {
+                    String confirmationInput = scan.nextLine();
+                    if (confirmationInput.equalsIgnoreCase("Yes")) {
+                        volunteers.clear();
+                        System.out.println("Your registration is cancelled.");
+                        return;
+                    } else if (confirmationInput.equalsIgnoreCase("No")) {
+                        break;
+                    } else {
+                        System.out.println("Invalid input, please try again.");
+                    }
+                }
+                break;
+            } else {
+                System.out.println("Invalid input, please try again.");
+            }
+        }
+    }
+
 }

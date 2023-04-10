@@ -25,6 +25,7 @@ package FA22BCS008;
             this.skillToNeed = skillToNeed;
             this.noteSection2 = noteSection2;
             this.dateAndTimeSection2 = dateAndTimeSection2;
+
         }
 
         public String getName() {
@@ -71,7 +72,7 @@ package FA22BCS008;
          return noteSection1;
         }
 
-        public void setNoteSection1(String noteSection1) {
+        public void setNoteInSection1(String noteSection1) {
          this.noteSection1 = noteSection1;
         }
 
